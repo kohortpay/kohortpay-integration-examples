@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KohortPay Button Test</title>
+    <style>
+      .product {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+        width: 200px;
+      }
+      .product img {
+        width: 100%;
+        height: auto;
+      }
+      .product p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script async src="http://localhost:3000/dist/bundle.js"></script> //TODO: it should be updated in the future
+
+    <div class="product" data-name="Casquette_KONGO " data-price=2000 data-description="This is a sample product.">
+      <img src="https://shop.kohortpay.com/cdn/shop/files/Casquette_KONGO.png?v=1692971762&width=2200" alt="Product Image">
+      <p>Name: Cassequette_Kongo</p>
+      <p>Price: $20</p>
+      <p>Description: This is a sample product.</p>
+      <button onclick="addToCart(this.parentElement, this)">Add to Cart</button>
+    </div>
+
+    <div class="product" data-name="Chaussettes_KIKI " data-price=500 data-description="This is a sample product.">
+      <img src="https://shop.kohortpay.com/cdn/shop/files/Chaussettes_KIKI.png?v=1692974993&width=2200" alt="Product Image">
+      <p>Name:  Chaussettes_KIKI</p>
+      <p>Price: $5</p>
+      <p>Description: This is a sample product.</p>
+      <button onclick="addToCart(this.parentElement, this)">Add to Cart</button>
+    </div>
+
+    <div class="product" data-name="Notebook_KOPA" data-price=1500 data-description="This is a sample product.">
+        <img src="https://shop.kohortpay.com/cdn/shop/files/Notebook_KOPA.png?v=1692977788&width=2200" alt="Product Image">
+        <p>Name: Notebook_KOPA</p>
+        <p>Price: $15</p>
+        <p>Description: This is a sample product.</p>
+        <button onclick="addToCart(this.parentElement, this)">Add to Cart</button>
+      </div>
+
+    <!-- ... Other Products ... -->
+    <div id="cart-info">
+      <p>Total Products in Cart: <span id="cart-count">0</span></p>
+    </div>
+    <kohortpay-checkout-button
+      id="kohortpay-button"
+      publishable-key="sk_test_0fd333a2d2443303c530d52f541c477391f3bb6d59867f5a6823f59c4c597bf6b04147eac7f52b471de3df1874e309"
+      background-color="#ec395e"
+      button-color="#FFFFFF"
+      font="georgia, serif"
+      border-style="1px solid #ec395e"
+      border-radius="4px"
+    >
+      Checkout
+    </kohortpay-checkout-button>
+
+    <script>
+        let cart = [];
+  
+        function addToCart(productDiv,button) {
+          const name = productDiv.getAttribute('data-name');
+          const price = parseInt(productDiv.getAttribute('data-price'));
+          const description = productDiv.getAttribute('data-description');
+          console.log({ name, price, quantity: 1, description })
+          const imageUrl = productDiv.querySelector('img').src;
+          
+          cart.push({ name, price, quantity: 1, description, imageUrl: imageUrl });
+
+          console.log(cart);
+          
+          document.getElementById('kohortpay-button').setAttribute('config', JSON.stringify({ lineItems: cart }));
+          console.log(productDiv.getAttribute("config"))
+          document.getElementById('cart-count').textContent = cart.length;
+          
+          button.textContent = "Added to Cart";
+          button.classList.add('added');
+          button.disabled = true;
+        }
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  width: 200px;
+}
+.product img {
+  width: 100%;
+  height: auto;
+}
+.product p {
+  margin: 0;
+}
