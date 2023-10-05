@@ -24,5 +24,5 @@ KohortPay offers a seamless payment solution designed for developers. Our goal i
 
 ## Need Help? 🤝
 
-If you encounter any issues or have questions regarding the integration, please refer to our official [KohortPay Documentation](#) or [contact our support team](#).
+If you encounter any issues or have questions regarding the integration, please refer to our official [KohortPay Documentation](#) or [contact our support team](contact@kohortpay.com).
 
