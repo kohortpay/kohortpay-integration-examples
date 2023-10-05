@@ -16,7 +16,7 @@ This repository contains two main directories:
 
 - `html-example/`: Contains a sample integration using plain HTML. It's perfect for those who want a straightforward integration without the complexities of modern web frameworks.
 
-- `react-nextjs-example/`: A sample integration using the React framework and Next.js. This is for developers who are building more dynamic web applications and want to integrate KohortPay seamlessly.
+- `kohortpay-react-sample/`: A sample integration using the React framework and Next.js. This is for developers who are building more dynamic web applications and want to integrate KohortPay seamlessly.
 
 ## Why KohortPay? 💡
 
