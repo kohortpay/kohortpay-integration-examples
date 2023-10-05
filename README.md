@@ -8,7 +8,7 @@ Whether you're building a simple static website or a complex web application usi
 
 - **HTML/CMS Integration**: If you're working with static websites, CMS platforms like WordPress, Joomla, or any platform that allows custom HTML, head over to the [HTML Example Guide](./html-example/README.md).
 
-- **Web Frameworks (React/Next.js)**: For developers building applications using React, Next.js, or similar web frameworks, check out the [React/Next.js Example Guide](./react-nextjs-example/README.md).
+- **Web Frameworks (React/Next.js)**: For developers building applications using React, Next.js, or similar web frameworks, check out the [React/Next.js Example Guide](./kohortpay-react-sample/README.md).
 
 ## What's Inside? 📦
 
