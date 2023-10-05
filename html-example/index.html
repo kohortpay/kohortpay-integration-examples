@@ -3,25 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>KohortPay Button Test</title>
-    <style>
-      .product {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin: 10px;
-        display: inline-block;
-        width: 200px;
-      }
-      .product img {
-        width: 100%;
-        height: auto;
-      }
-      .product p {
-        margin: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <script async src="http://localhost:3000/dist/bundle.js"></script> //TODO: it should be updated in the future
+    <script async src="http://localhost:3000/dist/bundle.js"></script> 
+    <script src="index.js"></script>
 
     <div class="product" data-name="Casquette_KONGO " data-price=2000 data-description="This is a sample product.">
       <img src="https://shop.kohortpay.com/cdn/shop/files/Casquette_KONGO.png?v=1692971762&width=2200" alt="Product Image">
@@ -45,7 +31,15 @@
         <p>Price: $15</p>
         <p>Description: This is a sample product.</p>
         <button onclick="addToCart(this.parentElement, this)">Add to Cart</button>
-      </div>
+    </div>
+
+    <div class="product" data-name="Sac banane KOKO" data-price=2000 data-description="This is a sample product.">
+        <img src="https://shop.kohortpay.com/cdn/shop/files/Banane_KOKO.png?v=1692977077&width=2200" alt="Product Image">
+        <p>Name: Sac banane KOKO</p>
+        <p>Price: $20</p>
+        <p>Description: This is a sample product.</p>
+        <button onclick="addToCart(this.parentElement, this)">Add to Cart</button>
+    </div>
 
     <!-- ... Other Products ... -->
     <div id="cart-info">
@@ -60,32 +54,9 @@
       border-style="1px solid #ec395e"
       border-radius="4px"
     >
-      Checkout
+      GO TO CHECKOUT
     </kohortpay-checkout-button>
 
-    <script>
-        let cart = [];
-  
-        function addToCart(productDiv,button) {
-          const name = productDiv.getAttribute('data-name');
-          const price = parseInt(productDiv.getAttribute('data-price'));
-          const description = productDiv.getAttribute('data-description');
-          console.log({ name, price, quantity: 1, description })
-          const imageUrl = productDiv.querySelector('img').src;
-          
-          cart.push({ name, price, quantity: 1, description, imageUrl: imageUrl });
-
-          console.log(cart);
-          
-          document.getElementById('kohortpay-button').setAttribute('config', JSON.stringify({ lineItems: cart }));
-          console.log(productDiv.getAttribute("config"))
-          document.getElementById('cart-count').textContent = cart.length;
-          
-          button.textContent = "Added to Cart";
-          button.classList.add('added');
-          button.disabled = true;
-        }
-      </script>
     </div>
   </body>
 </html>
