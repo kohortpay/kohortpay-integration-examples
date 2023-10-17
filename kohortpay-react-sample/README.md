@@ -21,7 +21,7 @@ Integrate the KohortPay checkout button seamlessly into your React application o
 
    - Place the KohortPay script in the `<head>` section of your HTML.
      ```html
-     <script async src="YOUR_KOHORTPAY_SCRIPT_URL_HERE"></script>
+     <script async src="https://js.kohortpay.com/checkout-button.js"></script>
      ```
 
 2. **Add the Button**:
@@ -52,8 +52,8 @@ Integrate the KohortPay checkout button seamlessly into your React application o
            "name": "Product Name",
            "price": 100,
            "quantity": 1,
-           "description": "Product Description",
-           "image_url": "https://example.com/product-image.jpg"
+           "description": "Product Description",   // optional
+           "image_url": "https://example.com/product-image.jpg" // optional
          }
        ]
      }'
